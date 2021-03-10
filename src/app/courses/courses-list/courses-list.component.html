@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Listas de Cursos</h1>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Data de Lançamento</th>
+            <th scope="col">Avaliação</th>
+            <th scope="col">Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let list of courses'>
+          
+            <td> <img src={{list.imageUrl}} alt="" class="img-fluid" width="50" height="50">  </td>
+            <td>{{list.name}}</td>
+            <td>{{list.price}}</td>
+            <td>{{list.code}}</td>
+            <td>{{list.releaseDate}}</td>
+            <td>
+              <!-- {{list.rating}} -->
+              <app-star [rating]='list.rating'></app-star>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
